@@ -245,9 +245,9 @@ int main(int argc, char * const argv[]) {
       if (CoreDisplay_Display_SetUserBrightness != NULL) { /* prefer SPI */
         if (DisplayServicesCanChangeBrightness != NULL) {
           if (!DisplayServicesCanChangeBrightness(dspy)) {
-            fprintf(stderr,
-                    "%s: failed to set brightness of display 0x%x\n",
-                    APP_NAME, (unsigned int)dspy);
+           // fprintf(stderr,
+           //         "%s: failed to set brightness of display 0x%x\n",
+           //         APP_NAME, (unsigned int)dspy);
             continue;
           }
         }
@@ -259,9 +259,9 @@ int main(int argc, char * const argv[]) {
         err = IODisplaySetFloatParameter(service, kNilOptions,
                                          kDisplayBrightness, brightness);
         if (err != kIOReturnSuccess) {
-          fprintf(stderr,
-                  "%s: failed to set brightness of display 0x%x (error %d)\n",
-                  APP_NAME, (unsigned int)dspy, err);
+         // fprintf(stderr,
+         //         "%s: failed to set brightness of display 0x%x (error %d)\n",
+         //         APP_NAME, (unsigned int)dspy, err);
           continue;
         }
       }
@@ -270,9 +270,9 @@ int main(int argc, char * const argv[]) {
       if (CoreDisplay_Display_GetUserBrightness != NULL) { /* prefer SPI */
         if (DisplayServicesCanChangeBrightness != NULL) {
           if (!DisplayServicesCanChangeBrightness(dspy)) {
-            fprintf(stderr,
-                    "%s: failed to get brightness of display 0x%x\n",
-                    APP_NAME, (unsigned int)dspy);
+          //  fprintf(stderr,
+          //          "%s: failed to get brightness of display 0x%x\n",
+          //          APP_NAME, (unsigned int)dspy);
             continue;
           }
         }
@@ -281,9 +281,9 @@ int main(int argc, char * const argv[]) {
         err = IODisplayGetFloatParameter(service, kNilOptions,
                                          kDisplayBrightness, &brightness);
         if (err != kIOReturnSuccess) {
-          fprintf(stderr,
-                  "%s: failed to get brightness of display 0x%x (error %d)\n",
-                  APP_NAME, (unsigned int)dspy, err);
+        //  fprintf(stderr,
+       //           "%s: failed to get brightness of display 0x%x (error %d)\n",
+       //           APP_NAME, (unsigned int)dspy, err);
           continue;
         }
       }
